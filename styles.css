@@ -10,12 +10,21 @@ body {
 }
 
 header {
-    text-align: left;
     max-width: 900px;
     width: 100%;
     background-color: #308c54; /* Fundo do título e barra de pesquisa */
     padding: 20px;
     box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-container {
+    text-align: left;
 }
 
 header h1 {
@@ -28,6 +37,42 @@ header h2 {
     font-size: 1.2em;
     color: #e0e0e0;
     margin-top: 5px;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.menu-button {
+    font-size: 1.5em;
+    background-color: #308c54;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
 }
 
 .search-container {

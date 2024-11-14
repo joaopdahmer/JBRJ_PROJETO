@@ -8,8 +8,21 @@
 <body>
 
 <header>
-    <h1>Memórias do Jardim da Lagoa</h1>
-    <h2>Enciclopédia digital colaborativa</h2>
+    <div class="header-content">
+        <div class="title-container">
+            <h1>Memórias do Jardim da Lagoa</h1>
+            <h2>Enciclopédia digital colaborativa</h2>
+        </div>
+        <div class="menu-container">
+            <button class="menu-button" onclick="toggleMenu()">☰</button>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#trilhas">Trilhas <!-- Adicione o link aqui --> </a>
+                <a href="#plantas">Plantas <!-- Adicione o link aqui --> </a>
+                <a href="#cartografia-historica">Cartografia Histórica <!-- Adicione o link aqui --> </a>
+                <a href="#sobre">Sobre <!-- Adicione o link aqui --> </a>
+            </div>
+        </div>
+    </div>
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Buscar por palavra-chave..." onkeyup="searchCards()">
     </div>
@@ -49,6 +62,31 @@
     </div>
 </div>
 
-<script src="scripts.js"></script>
+<!-- JavaScript embutido -->
+<script>
+    function searchCards() {
+        const input = document.getElementById('search-input').value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            const keywords = card.getAttribute('data-keywords').toLowerCase();
+            if (keywords.includes(input)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function toggleMenu() {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+            dropdownMenu.style.display = 'block';
+        } else {
+            dropdownMenu.style.display = 'none';
+        }
+    }
+</script>
+
 </body>
 </html>
