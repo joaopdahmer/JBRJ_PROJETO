@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Memórias do Jardim da Lagoa</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
 
+<body>
 <header>
     <div class="header-content">
         <div class="title-container">
@@ -16,10 +17,10 @@
         <div class="menu-container">
             <button class="menu-button" onclick="toggleMenu()">☰</button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#trilhas">Trilhas <!-- Adicione o link aqui --> </a>
-                <a href="#plantas">Plantas <!-- Adicione o link aqui --> </a>
-                <a href="#cartografia-historica">Cartografia Histórica <!-- Adicione o link aqui --> </a>
-                <a href="#sobre">Sobre <!-- Adicione o link aqui --> </a>
+                <a href="#trilhas">Trilhas</a>
+                <a href="#plantas">Plantas</a>
+                <a href="#cartografia-historica">Cartografia Histórica</a>
+                <a href="#sobre">Sobre</a>
             </div>
         </div>
     </div>
@@ -60,33 +61,14 @@
             <h3>Trilha Frei Leandro</h3>
         </a>
     </div>
+
+    <!-- Card 5 -->
+    <div class="card" data-keywords="scrollytelling acervo histórico">
+        <a href="https://joaopdahmer.github.io/jbrj_projeto3/" target="_blank">
+            <img src="https://acervo.jbrj.gov.br/wp-content/uploads/tainacan-items/431453/529742/AV02_F006.jpg" alt="Narrativa Scrollytelling do Acervo JB">
+            <h3>Narrativa Scrollytelling do Acervo JB</h3>
+        </a>
+    </div>
 </div>
-
-<!-- JavaScript embutido -->
-<script>
-    function searchCards() {
-        const input = document.getElementById('search-input').value.toLowerCase();
-        const cards = document.querySelectorAll('.card');
-
-        cards.forEach(card => {
-            const keywords = card.getAttribute('data-keywords').toLowerCase();
-            if (keywords.includes(input)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    function toggleMenu() {
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-            dropdownMenu.style.display = 'block';
-        } else {
-            dropdownMenu.style.display = 'none';
-        }
-    }
-</script>
-
 </body>
 </html>
