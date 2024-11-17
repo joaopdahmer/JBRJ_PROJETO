@@ -14,5 +14,9 @@ function searchCards() {
 
 function toggleMenu() {
     const dropdownMenu = document.getElementById('dropdownMenu');
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+        dropdownMenu.style.display = 'block';
+    } else {
+        dropdownMenu.style.display = 'none';
+    }
 }
